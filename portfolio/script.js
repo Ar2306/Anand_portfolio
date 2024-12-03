@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", function () {
     nav.classList.toggle("sticky", window.scrollY > 20);
-    scrollBtn.style.display = window.scrollY > 20 ? "block" : "none";
+    //   scrollBtn.style.display = window.scrollY > 20 ? "block" : "none";
   });
 
   // Side Navigation Menu
@@ -61,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Smooth Scrolling
-document
-  .querySelector(".scroll-button a")
-  .addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
+// document
+//   .querySelector(".scroll-button a")
+//   .addEventListener("click", function () {
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   });
 
 function toggleSideMenu() {
   const sideMenu = document.getElementById("sideMenu");
