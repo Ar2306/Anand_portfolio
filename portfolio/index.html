@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <title>Anand Reddy - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link
+      rel="preload"
+      as="style"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
 
   <body>
-    
     <nav>
       <div class="container navbar">
         <div class="logo"><a href="#">.portfolio</a></div>
@@ -24,19 +30,26 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="social-icons">
-          <a href="https://www.linkedin.com/in/anandreddy4545?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/anandreddy4545?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+          >
             <i class="fab fa-linkedin"></i>
           </a>
           <a href="https://github.com/Ar2306" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://instagram.com/anand_reddy_4545?igshid=M2RkZGJiMzhjOQ==" target="_blank">
+          <a
+            href="https://instagram.com/anand_reddy_4545?igshid=M2RkZGJiMzhjOQ=="
+            target="_blank"
+          >
             <i class="fab fa-instagram"></i>
           </a>
         </div>
         <div class="menu-btn" onclick="toggleSideMenu()">
           <i class="fas fa-bars"></i>
         </div>
+      </div>
     </nav>
 
     <div class="side-menu" id="sideMenu">
@@ -71,7 +84,11 @@
         <div class="title"><span>About Me</span></div>
         <div class="about-details">
           <div class="left">
-            <img src="assets/anand_profile.png" alt="Anand Reddy" />
+            <img
+              src="assets/anand_profile.webp"
+              alt="Anand Reddy"
+              loading="lazy"
+            />
           </div>
           <div class="right">
             <div class="topic">Learning Is My Passion</div>
@@ -128,53 +145,71 @@
       </div>
     </section>
 
-
-    <div style="height: 50px"></div>
-
     <!-- Projects Section Start -->
     <section id="projects" class="projects">
       <div class="container">
         <div class="title"><span>My Projects</span></div>
         <div class="project-boxes">
           <div class="project-box">
-            <i class="fas fa-robot"></i> <!-- AI ChatBot -->
+            <i class="fas fa-robot"></i>
+            <!-- AI ChatBot -->
             <div class="topic">AI ChatBot</div>
             <p></p>
-            <a href="https://github.com/yourusername/rock-paper-scissors" target="_blank">View Source Code</a>
+            <a
+              href="https://github.com/yourusername/rock-paper-scissors"
+              target="_blank"
+              >View Source Code</a
+            >
           </div>
           <div class="project-box">
-            <i class="fas fa-key"></i> <!-- Password Generator -->
+            <i class="fas fa-key"></i>
+            <!-- Password Generator -->
             <div class="topic">Password Generator</div>
             <p></p>
-            <a href="https://github.com/yourusername/password-generator" target="_blank">View Source Code</a>
+            <a
+              href="https://github.com/yourusername/password-generator"
+              target="_blank"
+              >View Source Code</a
+            >
           </div>
           <div class="project-box">
-            <i class="fas fa-id-card"></i> <!-- Portfolio -->
+            <i class="fas fa-id-card"></i>
+            <!-- Portfolio -->
             <div class="topic">Portfolio</div>
             <p></p>
-            <a href="https://github.com/Ar2306/Anand_portfolio" target="_blank">View Source Code</a>
+            <a href="https://github.com/Ar2306/Anand_portfolio" target="_blank"
+              >View Source Code</a
+            >
           </div>
           <div class="project-box">
-            <i class="fas fa-utensils"></i> <!-- Restaurant Management -->
+            <i class="fas fa-utensils"></i>
+            <!-- Restaurant Management -->
             <div class="topic">Restaurant Management</div>
             <p></p>
-            <a href="https://github.com/Ar2306/restaurant_management" target="_blank">View Source Code</a>
+            <a
+              href="https://github.com/Ar2306/restaurant_management"
+              target="_blank"
+              >View Source Code</a
+            >
           </div>
           <div class="project-box">
-            <i class="fas fa-question-circle"></i> <!-- Quiz Game -->
+            <i class="fas fa-question-circle"></i>
+            <!-- Quiz Game -->
             <div class="topic">Quiz Game</div>
             <p></p>
-            <a href="https://github.com/Ar2306/Quiz-Game" target="_blank">View Source Code</a>
+            <a href="https://github.com/Ar2306/Quiz-Game" target="_blank"
+              >View Source Code</a
+            >
           </div>
           <div class="project-box">
-            <i class="fas fa-hourglass-half"></i> <!-- Upcoming -->
+            <i class="fas fa-hourglass-half"></i>
+            <!-- Upcoming -->
             <div class="topic">Upcoming</div>
             <p>Stay tuned for more!</p>
           </div>
         </div>
       </div>
     </section>
-    
 
     <!-- Contact Me section Start -->
     <section id="contact" class="contact">
@@ -185,9 +220,9 @@
           <p>-------------------------------------------------------</p>
           <div>
             <div class="button">
-              <a href="mailto:anandreddy2306@gmail.com"
-                ><button>Let's Chat</button></a
-              >
+              <a href="mailto:anandreddy2306@gmail.com">
+                <button>Let's Chat</button>
+              </a>
             </div>
           </div>
         </div>
@@ -200,6 +235,8 @@
         <span> By <a href="#">Anand</a> | &#169; All Rights Reserved</span>
       </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Optimized JS (Defer attribute applied) -->
+    <script src="script.js" defer></script>
   </body>
 </html>

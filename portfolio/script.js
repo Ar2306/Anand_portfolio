@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   let nav = document.querySelector("nav");
   let scrollBtn = document.querySelector(".scroll-button a");
 
-  window.addEventListener("scroll", function () {
-    nav.classList.toggle("sticky", window.scrollY > 20);
-    //   scrollBtn.style.display = window.scrollY > 20 ? "block" : "none";
-  });
+  window.addEventListener(
+    "scroll",
+    debounce(function () {
+      nav.classList.toggle("sticky", window.scrollY > 20);
+    }, 200)
+  );
 
   // Side Navigation Menu
   const menuBtn = document.querySelector(".menu-btn");
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // typeWriter
+  // TypeWriter Effect
   const texts = [
     "I am Anand Reddy. ",
     "Welcome to my world of creativity and coding. ",
@@ -55,22 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
       count++;
       index = 0;
     }
-    setTimeout(typeWriter, 100);
   }
-  typeWriter();
+
+  setInterval(typeWriter, 100); // Using interval to avoid nested timeout
 });
 
-// Smooth Scrolling
-// document
-//   .querySelector(".scroll-button a")
-//   .addEventListener("click", function () {
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth",
-//     });
-//   });
-
-function toggleSideMenu() {
-  const sideMenu = document.getElementById("sideMenu");
-  sideMenu.classList.toggle("active");
+// Debounce function to limit the rate of scroll event triggering
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
 }
