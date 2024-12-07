@@ -18,8 +18,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to toggle the side menu
   function toggleSideMenu() {
+    document.addEventListener("DOMContentLoaded", function () {
+      let e = document.querySelector("nav");
+      document.querySelector(".scroll-button a"),
+        window.addEventListener(
+          "scroll",
+          debounce(function () {
+            e.classList.toggle("sticky", window.scrollY > 20);
+          }, 200)
+        );
+      let t = document.querySelector(".menu-btn"),
+        n = document.querySelector(".cancel-btn"),
+        l = document.querySelector(".side-menu"),
+        o = document.body;
+      function c() {
+        l.classList.toggle("show-side-menu"), o.classList.toggle("no-scroll");
+      }
+      t.addEventListener("click", c),
+        n.addEventListener("click", c),
+        document.querySelectorAll(".menu li a").forEach(function (e) {
+          e.addEventListener("click", function () {
+            l.classList.remove("show-side-menu"),
+              o.classList.remove("no-scroll");
+          });
+        });
+      let s = [
+          "I am Anand Reddy. ",
+          "Welcome to my world of creativity and coding. ",
+        ],
+        i = 0,
+        r = 0,
+        d = "",
+        u = "";
+      setInterval(function e() {
+        i !== s.length &&
+          ((u = (d = s[i]).slice(0, ++r)),
+          (document.querySelector(".text-two").textContent = u),
+          u.length === d.length && (i++, (r = 0)));
+      }, 100);
+    });
+    function debounce(e, t) {
+      let n;
+      return function (...l) {
+        clearTimeout(n), (n = setTimeout(() => e.apply(this, l), t));
+      };
+    }
     sideMenu.classList.toggle("show-side-menu");
-    body.classList.toggle("no-scroll"); // Toggle body scrolling
+    body.classList.toggle("no-scroll");
   }
 
   // Event listener for the menu button
@@ -32,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".menu li a").forEach(function (navLink) {
     navLink.addEventListener("click", function () {
       sideMenu.classList.remove("show-side-menu");
-      body.classList.remove("no-scroll"); // Enable scrolling
+      body.classList.remove("no-scroll");
     });
   });
 
@@ -48,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function typeWriter() {
     if (count === texts.length) {
-      return; // All texts have been typed
+      return;
     }
     currentText = texts[count];
     letter = currentText.slice(0, ++index);
@@ -59,10 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  setInterval(typeWriter, 100); // Using interval to avoid nested timeout
+  setInterval(typeWriter, 100);
 });
 
-// Debounce function to limit the rate of scroll event triggering
 function debounce(func, wait) {
   let timeout;
   return function (...args) {
